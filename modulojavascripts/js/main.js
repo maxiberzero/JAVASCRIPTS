@@ -1,27 +1,52 @@
-const nombrecompleto = "maximo berzero";
-console.log(nombrecompleto);
+let continuar = true;
+let total = 0;
 
-const añonacimiento = 1992;
-console.log(añonacimiento);
+while (continuar) {
 
-const dni = 37100203;
-console.log(dni);
+    let opcion = prompt(
+        "Seleccione una vianda:\n" +
+        "1 - Vianda veggie ($7000)\n" +
+        "2 - Vianda de pollo ($8000)\n" +
+        "3 - Vianda de carne ($9000)\n" +
+        "4 - Salir"
+    );
 
-let creditosderegalo = "tenes 1500 créditos de regalo";
-console.log(creditosderegalo);  
-alert (creditosderegalo);
+    if (opcion === "1") {
 
-let añoactual = 2026;
-console.log(añoactual);
+        let cantidad = prompt("¿Cuántas viandas veggie quiere?");
+        cantidad = parseInt(cantidad);
 
-let edad = añoactual - añonacimiento;
-console.log(edad);  
+        total = total + cantidad;
 
-let mensaje = "hola mi nombre es " + nombrecompleto + " y tengo " + edad + " años";
-console.log(mensaje);
+        console.log("Pedido de viandas veggie realizado.");
 
-let nombre = prompt("Ingrese su nombre");
-let apellido = prompt("Ingrese su apellido");
+    } else if (opcion === "2") {
 
-let edadactual = prompt("Ingrese su edad actual");
-edad = parseInt(edadactual);
+        let cantidad = prompt("¿Cuántas viandas de pollo quiere?");
+        cantidad = parseInt(cantidad);
+
+        total = total + cantidad;
+
+        console.log("Pedido de viandas de pollo realizado.");
+
+    } else if (opcion === "3") {
+
+        let cantidad = prompt("¿Cuántas viandas de carne quiere?");
+        cantidad = parseInt(cantidad);
+
+        total = total + cantidad;
+
+        console.log("Pedido de viandas de carne realizado.");
+
+    } else if (opcion === "4") {
+
+        continuar = false;
+
+    } else {
+
+        alert("Opción incorrecta");
+    }
+}
+
+console.log("Cantidad total de viandas: " + total);
+alert("Pedido finalizado. Total de viandas: " + total);
